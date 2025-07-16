@@ -1,0 +1,24 @@
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #d32f2f;
+  text-align: center;
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
+  border-radius: 8px;
+  margin: 1rem 0;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  details {
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    color: #c62828;
+  }
+}
