@@ -1,2 +1,3 @@
-npm run test
-npx lint-staged
+git add
+npm test
+npx lint-staged 
