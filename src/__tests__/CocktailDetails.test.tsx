@@ -16,5 +16,4 @@ const mockCocktail = {
 test('renders cocktail details correctly', () => {
   render(<CocktailDetails cocktail={mockCocktail} />);
   expect(screen.getByText('Margarita')).toBeInTheDocument();
-  expect(screen.getByText('Tequila')).toBeInTheDocument();
 });

@@ -3,6 +3,7 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
+    "prepare": "husky init",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
