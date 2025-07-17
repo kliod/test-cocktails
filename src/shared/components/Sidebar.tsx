@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { cocktailCodes } from '../constants/cocktailCodes';
+import { cocktailCodes } from '../../features/cocktails/constants/cocktailCodes';
 
 export const Sidebar: React.FC = () => {
   const currentPath = window.location.pathname;

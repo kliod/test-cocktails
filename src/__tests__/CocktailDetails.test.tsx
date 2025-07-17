@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { CocktailDetails } from '../features/CocktailDetails';
+import { CocktailDetails } from '../features/cocktails/components/CocktailDetails';
 
 const mockCocktail = {
   idDrink: '1',

@@ -1,27 +1,24 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import LazyImage from '../components/LazyImage';
+import LazyImage from '../../../shared/components/LazyImage';
+import '../styles/CocktailDetails.scss';
+import { TCocktail } from '../types';
 
-interface Cocktail {
-  idDrink: string;
-  strDrink: string;
-  strDrinkThumb: string;
-  strCategory: string;
-  strAlcoholic: string;
-  strGlass: string;
-  strInstructions: string;
-  [key: string]: any;
-}
-
-export const CocktailDetails: React.FC<{ cocktail: Cocktail }> = ({
+export const CocktailDetails: React.FC<{ cocktail: TCocktail }> = ({
   cocktail,
 }) => {
-  const ingredients = Object.keys(cocktail)
-    .filter((key) => key.startsWith('strIngredient') && cocktail[key])
-    .map((key, index) => ({
-      name: cocktail[key],
-      measure: cocktail[`strMeasure${index + 1}`],
-    }));
+  // There are up to 15 ingredients and measures in the API
+  const ingredients = Array.from({ length: 15 }, (_, i) => {
+    const name = cocktail[`strIngredient${i + 1}` as keyof TCocktail] as
+      | string
+      | undefined;
+    const measure = cocktail[`strMeasure${i + 1}` as keyof TCocktail] as
+      | string
+      | undefined;
+    if (name && name.trim() !== '') {
+      return { name, measure: measure || '' };
+    }
+    return null;
+  }).filter((item): item is { name: string; measure: string } => item !== null);
 
   return (
     <div className="cocktail-card">

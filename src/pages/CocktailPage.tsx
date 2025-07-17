@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import LoadingIndicator from '../components/LoadingIndicator';
-import ErrorBoundary from '../components/ErrorBoundary';
-import { useGetCocktailsByCodeQuery } from '../services/cocktails/api/cocktailsApiSlice';
-import { CocktailDetails } from '../features/CocktailDetails';
+import LoadingIndicator from '../shared/components/LoadingIndicator';
+import ErrorBoundary from '../shared/components/ErrorBoundary';
+import { CocktailDetails } from '../features/cocktails/components/CocktailDetails';
+import { TCocktail } from '../features/cocktails/types';
+import { useGetCocktailsByCodeQuery } from '../features/cocktails/hooks';
 
 const CocktailPage: React.FC = () => {
   const { code } = useParams<{ code: string }>();
@@ -22,7 +23,7 @@ const CocktailPage: React.FC = () => {
   return (
     <ErrorBoundary>
       <div className="cocktail-page">
-        {data?.map((cocktail) => (
+        {data?.map((cocktail: TCocktail) => (
           <CocktailDetails key={cocktail.idDrink} cocktail={cocktail} />
         ))}
       </div>

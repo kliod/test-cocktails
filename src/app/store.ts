@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { cocktailApi } from '../services/cocktails/api/cocktailsApiSlice';
+import { cocktailApi } from '../features/cocktails/api/cocktailsApiSlice';
 
 export const store = configureStore({
   reducer: {

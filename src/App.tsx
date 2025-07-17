@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import { Sidebar } from './components/Sidebar';
+import { Sidebar } from './shared/components/Sidebar';
 import CocktailPage from './pages/CocktailPage';
 import NotFoundPage from './pages/NotFoundPage';
-import { cocktailCodes } from './constants/cocktailCodes';
+import { cocktailCodes } from './features/cocktails/constants/cocktailCodes';
 
 const App: React.FC = () => {
   return (

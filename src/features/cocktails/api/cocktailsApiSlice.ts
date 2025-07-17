@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
-import { TCocktail } from '../../../types/types';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { TCocktail } from '../types';
 export const cocktailApi = createApi({
   reducerPath: 'cocktailApi',
   baseQuery: fetchBaseQuery({
@@ -13,5 +13,3 @@ export const cocktailApi = createApi({
     }),
   }),
 });
-
-export const { useGetCocktailsByCodeQuery } = cocktailApi;
