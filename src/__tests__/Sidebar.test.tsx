@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 vi.mock('../constants/cocktailCodes', () => ({
-  cocktailCodes: ['Margarita', 'Mojito', 'Martini'],
+  cocktailCodes: ['margarita', 'mojito', 'a1', 'kir'],
 }));
 import { Sidebar } from '../shared/components/Sidebar';
 import { MemoryRouter } from 'react-router-dom';
@@ -23,6 +23,7 @@ describe('Sidebar', () => {
     );
     expect(screen.getByText('Margarita')).toBeInTheDocument();
     expect(screen.getByText('Mojito')).toBeInTheDocument();
-    expect(screen.getByText('Martini')).toBeInTheDocument();
+    expect(screen.getByText('A1')).toBeInTheDocument();
+    expect(screen.getByText('Kir')).toBeInTheDocument();
   });
 });
